@@ -1,14 +1,13 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import page.BasePage;
 
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CartPage extends BasePage{
+public class CartPage extends BasePage {
 
     private String text1;
     private String text2;
@@ -22,6 +21,13 @@ public class CartPage extends BasePage{
 
     @FindBy(css = "a[href*='/build-your-own-computer']")
     private WebElement firstItemLink;
+
+
+    @FindBy(id = "username")
+    private WebElement username;
+
+    @FindBy(name = "password")
+    private WebElement passwordFied;
 
     @FindBy(css = "div[data-productid=\"1\"] .add-info .prices span[class = 'price actual-price'")
     private WebElement priceOfFirstItem;
@@ -146,5 +152,7 @@ public class CartPage extends BasePage{
     public String getTotalCartNumber(){
         return totalCartNumber.getText();
     }
+
+
 
 }
